@@ -98,33 +98,44 @@ document.addEventListener("DOMContentLoaded", () => {
     //     img: "images/Q2.png",
     //   },
   ];
-  // Intro pop up (popupContainer)
-  const popupIntro = document.getElementById("popupContainer");
-  const closeButton = document.getElementById("closeButton");
 
-  // creating function
+  // Intro pop up (popupContainer)
+  const popupIntroOne = document.getElementById("popupContainerOne");
+  const closeButtonOne = document.getElementById("closeButtonOne");
+
+  const popsupContainerTwo = document.getElementById("popupContainerTwo");
+  const closeButtonTwo = document.getElementById("closeButtonTwo");
+
+  const popsupContainerThree = document.getElementById("popupContainerTwo");
+  const closeButtonThree = document.getElementById("closeButtonTwo");
+
+  // creating function for window.onload
   window.onload = function () {
     setTimeout(function () {
-      popupIntro.style.display = "block";
+      popupIntroOne.style.display = "block";
     }, 500);
-  };
 
-  // close popup by pressing button
-  closeButton.addEventListener("click", () => {
-    popupIntro.style.display = "none";
-  });
+    // close popup by pressing button
+    closeButtonOne.addEventListener("click", () => {
+      popupIntroOne.style.display = "none";
+    });
+  };
 
   // shuffle, random array using sort
   cardArray.sort(() => 0.5 - Math.random());
 
   // initialising gridBox
   const gridBox = document.getElementById("grid");
+
   // intialising with result ID
   const result = document.getElementById("result");
+
   // array for chosen card to be pushed to
   let chosenCard = [];
+
   // array for chosenCard id to be pushed to
   let chosenCardIds = [];
+
   // array of winning matches
   const cardsWon = [];
 
@@ -134,9 +145,11 @@ document.addEventListener("DOMContentLoaded", () => {
       if (index < cardArray.length) {
         // create img element for every card, store in card
         const card = document.createElement("img");
+
         // set source attribute to every card
         card.setAttribute("src", "../images/blank.png");
         card.setAttribute("data-id", index);
+
         // add event listener with callback
         card.addEventListener("click", flipCard);
 
@@ -145,6 +158,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
+
   // call back funct
   createGrid();
 
@@ -152,39 +166,57 @@ document.addEventListener("DOMContentLoaded", () => {
   function checkCard() {
     // initialising cards
     const cards = document.querySelectorAll("#grid img");
+
     // create variable for chosen cards IDs
     const firstCardId = chosenCardIds[0];
     const secondCardId = chosenCardIds[1];
-    console.log(cards);
-    console.log("Matched?");
+    // console.log(cards);
+    // console.log("Matched?");
 
     // check if first card match second card
     if (chosenCard[0] == chosenCard[1]) {
-      alert("Matched made!");
-      // set blank_ png if a match
-      cards[firstCardId].setAttribute("src", "../images/blank_.png");
-      cards[secondCardId].setAttribute("src", "../images/blank_.png");
-      // stop click event listener on card if already matched
-      cards[firstCardId].removeEventListener("click", flipCard);
-      cards[secondCardId].removeEventListener("click", flipCard);
+      setTimeout(function () {
+        popsupContainerTwo.style.display = "block";
+      }, 100);
 
+      // close popup by pressing button
+      closeButtonTwo.addEventListener("click", () => {
+        console.log("Changed containerTwo to block & reset image on click");
+        popsupContainerTwo.style.display = "none";
+
+        // set blank_ png if a match
+        cards[firstCardId].setAttribute("src", "../images/blank_.png");
+        cards[secondCardId].setAttribute("src", "../images/blank_.png");
+
+        // stop click event listener on card if already matched
+        cards[firstCardId].removeEventListener("click", flipCard);
+        cards[secondCardId].removeEventListener("click", flipCard);
+      });
       // record how many matches made
       cardsWon.push(chosenCard);
     } else {
-      cards[firstCardId].setAttribute("src", "../images/blank.png");
-      cards[secondCardId].setAttribute("src", "../images/blank.png");
-      alert("Try again!");
+      setTimeout(function () {
+        popsupContainerThree.style.display = "block";
+      }, 500);
+
+      // close popup by pressing button
+      closeButtonThree.addEventListener("click", () => {
+        console.log("Changed containerThree to block & reset image on click");
+        popsupContainerThree.style.display = "none";
+        cards[firstCardId].setAttribute("src", "../images/blank.png");
+        cards[secondCardId].setAttribute("src", "../images/blank.png");
+      });
     }
 
     // restart
     result.textContent = cardsWon.length;
     chosenCard = [];
     chosenCardIds = [];
-
-    if (cardsWon.length == cardArray.length / 2) {
-      result.textContent = "Congrats! You found them all!";
-    }
   }
+  if (cardsWon.length == cardArray.length / 2) {
+    result.textContent = "Congrats! You found them all!";
+  }
+  // }
   // flip card func
   function flipCard() {
     // after shuffle, show array

@@ -2,11 +2,12 @@ body {
   background-color: rgb(229, 202, 155);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-#popupContainer {
+#popupContainerOne {
   position: absolute;
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
+
   /* transition: transform 0.2s; */
   display: none;
 }
@@ -31,7 +32,7 @@ body {
   top: 20%;
   transform: translateX(-50%);
 }
-#closeButton {
+#closeButtonOne {
   position: absolute;
   left: 50%;
   bottom: 20%;
@@ -44,12 +45,112 @@ body {
   transition: transform 0.2s;
   z-index: 10;
 }
-#closeButton:hover {
+#closeButtonOne:hover {
   background-color: rgb(229, 202, 142);
 }
-.fa-regular {
-  transform: translateY(800%);
+.fa-regularOne {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
+}
+#popupContainerTwo {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  /* transition: transform 0.2s; */
+  display: none;
+}
+#popupContentTwo {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: rgb(244, 211, 150);
+  border-style: solid;
+  border-color: rgb(222, 187, 133);
+  border-width: 5px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: block;
+}
+#popupContentTwoTextTwo {
+  position: absolute;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  display: block;
+}
+#closeButtonTwo {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgb(250, 225, 175, 0.6);
+  cursor: pointer;
+  border-radius: 50%;
   transition: transform 0.2s;
+  z-index: 10;
+}
+#closeButtonTwo:hover {
+  background-color: rgb(229, 202, 142);
+}
+#popupContainerThree {
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  /* transition: transform 0.2s; */
+  display: none;
+}
+#popupContentThree {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  background-color: rgb(244, 211, 150);
+  border-style: solid;
+  border-color: rgb(222, 187, 133);
+  border-width: 5px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: block;
+}
+#popupContentThreeTextThree {
+  position: absolute;
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translateX(-50%);
+  display: block;
+}
+#closeButtonThree {
+  position: absolute;
+  left: 50%;
+  bottom: 20%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgb(250, 225, 175, 0.6);
+  cursor: pointer;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  z-index: 10;
+}
+#closeButtonThree:hover {
+  background-color: rgb(229, 202, 142);
+}
+.fa-regularTwo {
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  transform: translateX(-50%);
 }
 #result_div {
   position: absolute;
@@ -75,5 +176,6 @@ img {
   margin: 7px 5px 0px 3px;
   width: auto;
   height: 200px;
+  cursor: pointer;
   /* object-fit: cover; */
 }
