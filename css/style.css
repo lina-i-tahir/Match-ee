@@ -7,6 +7,7 @@ body {
   left: 50%;
   top: 20%;
   transform: translateX(-50%);
+  /* transition: transform 0.2s; */
   display: none;
 }
 
@@ -42,6 +43,9 @@ body {
   border-radius: 50%;
   transition: transform 0.2s;
   z-index: 10;
+}
+#closeButton:hover {
+  background-color: rgb(229, 202, 142);
 }
 .fa-regular {
   transform: translateY(800%);

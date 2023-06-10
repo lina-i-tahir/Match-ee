@@ -102,12 +102,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupIntro = document.getElementById("popupContainer");
   const closeButton = document.getElementById("closeButton");
 
+  // creating function
   window.onload = function () {
     setTimeout(function () {
       popupIntro.style.display = "block";
     }, 500);
   };
 
+  // close popup by pressing button
   closeButton.addEventListener("click", () => {
     popupIntro.style.display = "none";
   });
