@@ -103,11 +103,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const popupIntroOne = document.getElementById("popupContainerOne");
   const closeButtonOne = document.getElementById("closeButtonOne");
 
+  // Match pair pop up
   const popsupContainerTwo = document.getElementById("popupContainerTwo");
   const closeButtonTwo = document.getElementById("closeButtonTwo");
 
+  // Incorrect pair pop up
   const popsupContainerThree = document.getElementById("popupContainerThree");
   const closeButtonThree = document.getElementById("closeButtonThree");
+
+  // Win game + restart pop up
+  const popsupContainerFour = document.getElementById("popupContainerFour");
+  const closeButtonFour = document.getElementById("closeButtonFour");
 
   // creating function for window.onload
   window.onload = function () {
@@ -204,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeButtonThree.addEventListener("click", () => {
         console.log("Changed containerThree to block & reset image on click");
         popsupContainerThree.style.display = "none";
-        cards[firstCardId].setAttribute("src", "../images/blank.png");
+        cards.setAttribute("src", "../images/blank.png");
         cards[secondCardId].setAttribute("src", "../images/blank.png");
       });
     }
@@ -215,20 +221,25 @@ document.addEventListener("DOMContentLoaded", () => {
     chosenCardIds = [];
 
     if (cardsWon.length == cardArray.length / 2) {
-      console.log("Found 6");
+      console.log("Win, game over and restart");
       setTimeout(function () {
-        popsupContainerThree.style.display = "block";
+        popsupContainerTwo.style.display = "none";
       }, 100);
+      setTimeout(function () {
+        popsupContainerFour.style.display = "block";
+      }, 500);
 
       // close popup by pressing button
-      closeButtonThree.addEventListener("click", () => {
-        console.log("Changed containerThree to block & reset image on click");
-        popsupContainerThree.style.display = "none";
+      closeButtonFour.addEventListener("click", () => {
+        console.log("Changed containerFour to block & reset game on click");
+        popsupContainerFour.style.display = "none";
         cards[firstCardId].setAttribute("src", "../images/blank.png");
         cards[secondCardId].setAttribute("src", "../images/blank.png");
       });
-      // result.textContent = "Congrats! You found them all!";
     }
+    // result.textContent = cardsWon.length;
+    // chosenCard = [];
+    // chosenCardIds = [];
   }
   // }
   // flip card func
