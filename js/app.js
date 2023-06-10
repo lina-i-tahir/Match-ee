@@ -210,7 +210,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeButtonThree.addEventListener("click", () => {
         console.log("Changed containerThree to block & reset image on click");
         popsupContainerThree.style.display = "none";
-        cards.setAttribute("src", "../images/blank.png");
+        cards[firstCardId].setAttribute("src", "../images/blank.png");
         cards[secondCardId].setAttribute("src", "../images/blank.png");
       });
     }
@@ -227,21 +227,19 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
       setTimeout(function () {
         popsupContainerFour.style.display = "block";
-      }, 500);
+      }, 200);
 
       // close popup by pressing button
       closeButtonFour.addEventListener("click", () => {
         console.log("Changed containerFour to block & reset game on click");
         popsupContainerFour.style.display = "none";
-        cards[firstCardId].setAttribute("src", "../images/blank.png");
-        cards[secondCardId].setAttribute("src", "../images/blank.png");
+        cards.forEach((x) => {
+          x.setAttribute("src", "../images/blank.png");
+        });
       });
     }
-    // result.textContent = cardsWon.length;
-    // chosenCard = [];
-    // chosenCardIds = [];
   }
-  // }
+
   // flip card func
   function flipCard() {
     // after shuffle, show array
@@ -264,10 +262,4 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(checkCard, 500);
     }
   }
-
-  // cant use arrow function?
-  // const flipCard = (cardId) => {
-  //   this.getAttribute("data-id");
-  //   console.log("clicked", cardId);
-  // };
 });
