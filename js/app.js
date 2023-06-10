@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cards.forEach((x) => {
           x.setAttribute("src", "../images/blank.png");
         });
+        result.textContent = "0";
       });
     }
   }
