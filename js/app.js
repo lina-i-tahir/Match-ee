@@ -106,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const popsupContainerTwo = document.getElementById("popupContainerTwo");
   const closeButtonTwo = document.getElementById("closeButtonTwo");
 
-  const popsupContainerThree = document.getElementById("popupContainerTwo");
-  const closeButtonThree = document.getElementById("closeButtonTwo");
+  const popsupContainerThree = document.getElementById("popupContainerThree");
+  const closeButtonThree = document.getElementById("closeButtonThree");
 
   // creating function for window.onload
   window.onload = function () {
@@ -175,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // check if first card match second card
     if (chosenCard[0] == chosenCard[1]) {
+      // match - display block
       setTimeout(function () {
         popsupContainerTwo.style.display = "block";
       }, 100);
@@ -197,7 +198,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       setTimeout(function () {
         popsupContainerThree.style.display = "block";
-      }, 500);
+      }, 100);
 
       // close popup by pressing button
       closeButtonThree.addEventListener("click", () => {
@@ -212,9 +213,22 @@ document.addEventListener("DOMContentLoaded", () => {
     result.textContent = cardsWon.length;
     chosenCard = [];
     chosenCardIds = [];
-  }
-  if (cardsWon.length == cardArray.length / 2) {
-    result.textContent = "Congrats! You found them all!";
+
+    if (cardsWon.length == cardArray.length / 2) {
+      console.log("Found 6");
+      setTimeout(function () {
+        popsupContainerThree.style.display = "block";
+      }, 100);
+
+      // close popup by pressing button
+      closeButtonThree.addEventListener("click", () => {
+        console.log("Changed containerThree to block & reset image on click");
+        popsupContainerThree.style.display = "none";
+        cards[firstCardId].setAttribute("src", "../images/blank.png");
+        cards[secondCardId].setAttribute("src", "../images/blank.png");
+      });
+      // result.textContent = "Congrats! You found them all!";
+    }
   }
   // }
   // flip card func
