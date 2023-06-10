@@ -98,6 +98,19 @@ document.addEventListener("DOMContentLoaded", () => {
     //     img: "images/Q2.png",
     //   },
   ];
+  // Intro pop up (popupContainer)
+  const popupIntro = document.getElementById("popupContainer");
+  const closeButton = document.getElementById("closeButton");
+
+  window.onload = function () {
+    setTimeout(function () {
+      popupIntro.style.display = "block";
+    }, 500);
+  };
+
+  closeButton.addEventListener("click", () => {
+    popupIntro.style.display = "none";
+  });
 
   // shuffle, random array using sort
   cardArray.sort(() => 0.5 - Math.random());
