@@ -134,7 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const gridBox = document.getElementById("grid");
 
   // intialising with result ID
-  const result = document.getElementById("result");
+  let result = document.getElementById("result");
 
   // array for chosen card to be pushed to
   let chosenCard = [];
@@ -199,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cards[firstCardId].removeEventListener("click", flipCard);
         cards[secondCardId].removeEventListener("click", flipCard);
       });
+
       // record how many matches made
       cardsWon.push(chosenCard);
     } else {
@@ -219,26 +220,24 @@ document.addEventListener("DOMContentLoaded", () => {
     result.textContent = cardsWon.length;
     chosenCard = [];
     chosenCardIds = [];
+  }
+  if (cardsWon.length === cardArray.length / 2) {
+    console.log("Win, game over and restart");
+    setTimeout(function () {
+      popsupContainerTwo.style.display = "none";
+    }, 100);
+    setTimeout(function () {
+      popsupContainerFour.style.display = "block";
+    }, 200);
 
-    if (cardsWon.length == cardArray.length / 2) {
-      console.log("Win, game over and restart");
-      setTimeout(function () {
-        popsupContainerTwo.style.display = "none";
-      }, 100);
-      setTimeout(function () {
-        popsupContainerFour.style.display = "block";
-      }, 200);
-
-      // close popup by pressing button
-      closeButtonFour.addEventListener("click", () => {
-        console.log("Changed containerFour to block & reset game on click");
-        popsupContainerFour.style.display = "none";
-        cards.forEach((x) => {
-          x.setAttribute("src", "../images/blank.png");
-        });
-        result.textContent = "0";
+    // close popup by pressing button
+    closeButtonFour.addEventListener("click", () => {
+      console.log("Changed containerFour to block & reset game on click");
+      popsupContainerFour.style.display = "none";
+      cards.forEach((x) => {
+        x.setAttribute("src", "../images/blank.png");
       });
-    }
+    });
   }
 
   // flip card func
