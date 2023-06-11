@@ -223,25 +223,28 @@ document.addEventListener("DOMContentLoaded", () => {
     result.textContent = cardsWon.length;
     chosenCard = [];
     chosenCardIds = [];
-  }
-  if (cardsWon.length == cardArray.length / 2) {
-    // result.textContent = "Congrats! You found them all!";
-    setTimeout(function () {
-      popsupContainerTwo.style.display = "none";
-    }, 100);
-    setTimeout(function () {
-      popsupContainerFour.style.display = "block";
-    }, 300);
-    // close popup by pressing button
-    closeButtonFour.addEventListener("click", () => {
-      console.log("Changed containerFour to block & reset game on click");
-      popsupContainerFour.style.display = "none";
-      cards.forEach((x) => {
-        x.setAttribute("src", "../images/blank.png");
-      });
-    });
-  }
 
+    if (cardsWon.length === cardArray.length / 2) {
+      // result.textContent = "Congrats! You found them all!";
+      setTimeout(function () {
+        popsupContainerTwo.style.display = "none";
+      }, 00);
+      setTimeout(function () {
+        popsupContainerFour.style.display = "block";
+      }, 50);
+      // close popup by pressing button
+      closeButtonFour.addEventListener("click", () => {
+        console.log("Changed containerFour to block & reset game on click");
+        popsupContainerFour.style.display = "none";
+        cards.forEach((x) => {
+          x.setAttribute("src", "../images/blank.png");
+        });
+        // add reset button
+        window.location.reload();
+        return false;
+      });
+    }
+  }
   // flip card func
   function flipCard() {
     // after shuffle, show array
