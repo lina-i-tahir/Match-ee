@@ -3,7 +3,6 @@ body {
   background-image: url("../images/background.png");
   background-size: 30%;
   background-blend-mode: soft-light;
-  opacity: ;
   background-color: rgb(229, 202, 155);
 }
 #popupContainerOne,
@@ -24,12 +23,15 @@ body {
   position: relative;
   width: 400px;
   height: 300px;
-  background-color: rgb(244, 211, 150);
-  border-style: solid;
-  border-color: rgb(222, 187, 133);
-  border-width: 5px;
-  border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  /* background-color: rgb(244, 211, 150); */
+  background-image: url("../images/Q2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border-style: solid; */
+  /* border-color: rgb(222, 187, 133); */
+  /* border-width: 5px;
+  border-radius: 20px; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
   text-align: center;
 }
 #popupContentOneTextOne,
@@ -38,7 +40,7 @@ body {
 #popupContentFourTextFour {
   position: absolute;
   left: 50%;
-  top: 20%;
+  top: 10%;
   transform: translateX(-50%);
 }
 #closeButtonOne,
@@ -47,18 +49,18 @@ body {
 #closeButtonFour {
   position: absolute;
   left: 50%;
-  bottom: 20%;
+  bottom: 33%;
   transform: translateX(-50%);
   width: 40px;
   height: 40px;
-  background-color: rgb(250, 225, 175, 0.6);
+  background-color: rgb(229, 202, 142, 0.5);
   cursor: pointer;
   border-radius: 50%;
   transition: transform 0.2s;
   z-index: 10;
 }
 #closeButtonOne:hover {
-  background-color: rgb(229, 202, 142);
+  background-color: rgb(250, 225, 175, 1);
 }
 
 #closeButtonTwo:hover {
