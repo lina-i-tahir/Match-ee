@@ -57,10 +57,17 @@ body {
   transition: transform 0.2s;
   z-index: 10;
 }
-#closeButtonOne,
-#closeButtonTwo,
-#closeButtonThree,
-#closeButtonFour :hover {
+#closeButtonOne:hover {
+  background-color: rgb(229, 202, 142);
+}
+
+#closeButtonTwo:hover {
+  background-color: rgb(229, 202, 142);
+}
+#closeButtonThree:hover {
+  background-color: rgb(229, 202, 142);
+}
+#closeButtonFour:hover {
   background-color: rgb(229, 202, 142);
 }
 .fa-regularOne {
@@ -102,7 +109,13 @@ img {
   width: auto;
   height: 200px;
   cursor: pointer;
+  transition: transform 250ms;
+  transition-timing-function: ease-out;
   /* object-fit: cover; */
+}
+
+img:hover {
+  transform: translateY(-5px);
 }
 /* #popupContainerTwo {
   position: absolute;
