@@ -16,15 +16,61 @@ body {
   display: none;
 }
 
-#popupContentOne,
-#popupContentTwo,
-#popupContentThree,
-#popupContentFour {
+#popupContentOne {
   position: relative;
+  left: 10%;
   width: 400px;
   height: 300px;
   /* background-color: rgb(244, 211, 150); */
   background-image: url("../images/Q2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border-style: solid; */
+  /* border-color: rgb(222, 187, 133); */
+  /* border-width: 5px;
+  border-radius: 20px; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+}
+#popupContentTwo {
+  position: relative;
+  left: 10%;
+  width: 400px;
+  height: 300px;
+  /* background-color: rgb(244, 211, 150); */
+  background-image: url("../images/Q3.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border-style: solid; */
+  /* border-color: rgb(222, 187, 133); */
+  /* border-width: 5px;
+  border-radius: 20px; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+}
+#popupContentThree {
+  position: relative;
+  left: 10%;
+  width: 400px;
+  height: 300px;
+  /* background-color: rgb(244, 211, 150); */
+  background-image: url("../images/Q1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* border-style: solid; */
+  /* border-color: rgb(222, 187, 133); */
+  /* border-width: 5px;
+  border-radius: 20px; */
+  /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
+  text-align: center;
+}
+#popupContentFour {
+  position: relative;
+  left: 10%;
+  width: 400px;
+  height: 300px;
+  /* background-color: rgb(244, 211, 150); */
+  background-image: url("../images/Q4.png");
   background-size: contain;
   background-repeat: no-repeat;
   /* border-style: solid; */
@@ -82,29 +128,31 @@ body {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 100%;
+  top: 105%;
   width: auto;
-  margin: 10px 0px 10px 0px;
-  padding: 5px;
+  /* margin: 10px 0px 10px 0px; */
+  padding: 10px;
   background-color: rgb(243, 227, 198);
   border-color: rgb(216, 188, 139);
   border-style: solid;
-  border-width: 3px;
+  border-width: 10px;
   border-radius: 20px;
+  text-align: center;
 }
 #grid {
   position: absolute;
   left: 50%;
   top: 10%;
   transform: translateX(-50%);
-  width: 657px;
+  width: 700px;
   height: 640px;
-  margin: 20px;
+  margin: 30px;
   background-color: rgb(244, 211, 150);
   border-style: solid;
   border-color: rgb(216, 188, 139);
-  border-width: 5px;
-  border-radius: 20px;
+  border-width: 15px;
+  border-radius: 30px;
+  text-align: center;
 }
 img {
   margin: 7px 5px 0px 3px;
