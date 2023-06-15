@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // array of cards
   const cardArray = [
     {
       name: "num0",
@@ -183,6 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (chosenCard[0] == chosenCard[1]) {
       setTimeout(function () {
         popsupContainerTwo.style.display = "block";
+        rightAudio.play();
       }, 100);
 
       // close popup by pressing button
@@ -206,7 +208,9 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(function () {
         popsupContainerThree.style.display = "block";
         // alert("wrong");
+        wrongAudio.play();
       }, 100);
+
       setTimeout(function () {
         cards[firstCardId].setAttribute("src", "../images/blank.png");
         cards[secondCardId].setAttribute("src", "../images/blank.png");
@@ -231,6 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 00);
       setTimeout(function () {
         popsupContainerFour.style.display = "block";
+        winAudio.play();
       }, 50);
       // close popup by pressing button
       closeButtonFour.addEventListener("click", () => {
@@ -267,6 +272,29 @@ document.addEventListener("DOMContentLoaded", () => {
       setTimeout(checkCard, 500);
     }
   }
+
+  // play background music
+  // const backgroundAudio = new Audio("music/8bittownthemesong-59266.mp3");
+  // const backgroundAudioButton = document.getElementById("backgroundMusic");
+
+  // // Play the audio automatically
+  // backgroundAudioButton.play();
+
+  // Sound Effect
+  const wrongAudio = new Audio("music/negative_beeps-6008.mp3");
+  wrongAudio.volume = 0.4;
+
+  const rightAudio = new Audio("music/correct-6033.mp3");
+  rightAudio.volume = 0.4;
+
+  const winAudio = new Audio("music/magical-hit-45356.mp3");
+  winAudio.volume = 0.4;
+
+  const backgroundAudio = new Audio("music/8bittownthemesong-59266.mp3");
+  backgroundAudio.volume = 0.25;
+  backgroundAudio.autoplay = true;
+  backgroundAudio();
+  backgroundAudio.loop = true;
 
   //DOM
 });
