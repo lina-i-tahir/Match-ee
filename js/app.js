@@ -291,7 +291,7 @@ document.addEventListener("DOMContentLoaded", () => {
   winAudio.volume = 0.4;
 
   const backgroundAudio = new Audio("music/8bittownthemesong-59266.mp3");
-  backgroundAudio.volume = 0.25;
+  backgroundAudio.volume = 0.2;
   backgroundAudio.autoplay = true;
   backgroundAudio();
   backgroundAudio.loop = true;
