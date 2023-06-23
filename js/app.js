@@ -3,27 +3,27 @@ document.addEventListener("DOMContentLoaded", () => {
   const cardArray = [
     {
       name: "num0",
-      img: "../images/num0.png",
+      img: "images/num0.png",
     },
     {
       name: "num1",
-      img: "../images/num1.png",
+      img: "images/num1.png",
     },
     {
       name: "num2",
-      img: "../images/num2.png",
+      img: "images/num2.png",
     },
     {
       name: "num3",
-      img: "../images/num3.png",
+      img: "images/num3.png",
     },
     {
       name: "num4",
-      img: "../images/num4.png",
+      img: "images/num4.png",
     },
     {
       name: "num5",
-      img: "../images/num5.png",
+      img: "images/num5.png",
     },
     {
       name: "num0",
@@ -154,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const card = document.createElement("img");
 
         // set source attribute to every card
-        card.setAttribute("src", "../images/blank.png");
+        card.setAttribute("src", "images/blank.png");
         card.setAttribute("data-id", index);
 
         // add event listener with callback
@@ -193,8 +193,8 @@ document.addEventListener("DOMContentLoaded", () => {
         popsupContainerTwo.style.display = "none";
 
         // set blank_ png if a match
-        cards[firstCardId].setAttribute("src", "../images/blank_.png");
-        cards[secondCardId].setAttribute("src", "../images/blank_.png");
+        cards[firstCardId].setAttribute("src", "images/blank_.png");
+        cards[secondCardId].setAttribute("src", "images/blank_.png");
 
         // stop click event listener on card if already matched
         cards[firstCardId].removeEventListener("click", flipCard);
@@ -212,8 +212,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 100);
 
       setTimeout(function () {
-        cards[firstCardId].setAttribute("src", "../images/blank.png");
-        cards[secondCardId].setAttribute("src", "../images/blank.png");
+        cards[firstCardId].setAttribute("src", "images/blank.png");
+        cards[secondCardId].setAttribute("src", "images/blank.png");
       }, 1000);
 
       // close popup by pressing button
@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Changed containerFour to block & reset game on click");
         popsupContainerFour.style.display = "none";
         cards.forEach((x) => {
-          x.setAttribute("src", "../images/blank.png");
+          x.setAttribute("src", "mages/blank.png");
         });
         // add reset button
         window.location.reload();
