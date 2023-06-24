@@ -242,7 +242,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log("Changed containerFour to block & reset game on click");
         popsupContainerFour.style.display = "none";
         cards.forEach((x) => {
-          x.setAttribute("src", "mages/blank.png");
+          x.setAttribute("src", "images/blank.png");
         });
         // add reset button
         window.location.reload();
