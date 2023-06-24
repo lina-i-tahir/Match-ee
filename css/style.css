@@ -1,6 +1,6 @@
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("images/background.png");
+  background-image: url("../images/background.png");
   background-size: 30%;
   background-blend-mode: soft-light;
   background-color: rgb(229, 202, 155);
@@ -22,7 +22,7 @@ body {
   width: 400px;
   height: 300px;
   /* background-color: rgb(244, 211, 150); */
-  background-image: url("images/Q2.png");
+  background-image: url("../images/Q2.png");
   background-size: contain;
   background-repeat: no-repeat;
   /* border-style: solid; */
@@ -38,7 +38,7 @@ body {
   width: 400px;
   height: 300px;
   /* background-color: rgb(244, 211, 150); */
-  background-image: url("images/Q3.png");
+  background-image: url("../images/Q3.png");
   background-size: contain;
   background-repeat: no-repeat;
   /* border-style: solid; */
@@ -54,7 +54,7 @@ body {
   width: 400px;
   height: 300px;
   /* background-color: rgb(244, 211, 150); */
-  background-image: url("images/Q1.png");
+  background-image: url("../images/Q1.png");
   background-size: contain;
   background-repeat: no-repeat;
   /* border-style: solid; */
@@ -70,7 +70,7 @@ body {
   width: 400px;
   height: 300px;
   /* background-color: rgb(244, 211, 150); */
-  background-image: url("images/Q4.png");
+  background-image: url("../images/Q4.png");
   background-size: contain;
   background-repeat: no-repeat;
   /* border-style: solid; */
